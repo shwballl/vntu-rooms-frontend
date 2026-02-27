@@ -1,5 +1,3 @@
-// src/types.ts
-
 export interface User {
   id: string;
   name: string;
@@ -8,22 +6,23 @@ export interface User {
 }
 
 export interface Room {
-  id: string; // Номер аудиторії, напр. "1209"
-  status: 'free' | 'occupied' | 'selected';
-  type?: 'classroom' | 'wc' | 'stairs' | 'utility';
+  id: string;
+  status: "free" | "occupied" | "maintenance";
 }
 
-// Координати для інтерактивної зони на карті
 export interface RoomZone {
   id: string;
   x: number;
   y: number;
   width: number;
   height: number;
+  type?: "room" | "service";
 }
 
-export interface BookingSlot {
-  date: string;
-  time: string;
-  isBooked: boolean;
+export interface FloorData {
+  id: string;
+  name: string;
+  svgBase: string; // Базовий SVG (стіни, коридори) без інтерактивних зон
+  viewBox: string;
+  zones: RoomZone[];
 }

@@ -12,7 +12,7 @@ export default function BookingPage() {
 
   const getSlotStatus = (colIndex: number, rowIndex: number) => {
     if (colIndex === 0 && rowIndex === 0) return 'occupied'; 
-    if (colIndex === 5 && rowIndex === 0) return 'occupied';
+    // if (colIndex === 0 && rowIndex === 0) return 'occupied';
     if (selectedSlot?.col === colIndex && selectedSlot?.row === rowIndex) return 'selected';
     return 'free';
   };
